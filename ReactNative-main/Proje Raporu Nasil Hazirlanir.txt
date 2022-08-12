@@ -1,0 +1,22 @@
+1-Musterinin ne istedigine degil neye ihtiyaci oldugunu farketmek
+2-Ben kullanici olarak uygulamaya baktigimda neleri yapabilirim neler kullanabilirim
+	Uygulamada ne gibi aksiyonlar alinacak bunu kesfetmek gerekir
+	Bu maddelerin her birine useCase denir.
+	Ilk olarak farketmem gereken sey bu uygulama icerisinde ne gibi aksiyonlar alinacak.
+3-useCase ler olusturulurken aksiyonlari da gerceklestirebilecek kisileri ortaya cikartmak gerekiyor.
+	Olayi kim gerceklestirecek
+	Sistemin gerceklestirecegi hic bir sey aktor olarak secilmez
+4-Proje gereksinimlerinin hepsi ortaya cikmasi gerekiyor.
+
+
+Toparlarsak
+(
+1-Istek Geldi
+2-Gereksinimler Cikarildi
+	1-Aktorlerin yapacagi tum gereksinimler cikartilacak
+	2-Aktor disindaki istekler ornegin bildirim gitmesi gibi sistemin yapacagi seyler ek gereksinimlere girer.
+3-Aktorler ve Aksiyonlar Gruplanir
+4-Adim Adim Gosterim 
+	Cikartilan gereksinimlerin her birinin nasil bir aksiyon gosterecegini en ince detayina kadar yazacagim yer
+	
+)

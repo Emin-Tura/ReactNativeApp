@@ -1,0 +1,91 @@
+------------- Android -------------
+1-React Native Doc gidelim
+2-Guides -> Publishing to Google Play Store
+3-Appimizi canlıya çıkartmak için ilk başta imzalamamız gerekiyor.
+4-Bunu yapabilmek için android tarafında üretilen dosyanın adı keyStore dosyasıdır.Bunun alternatifleri de mevcut.
+5-Bunu gerçekleştirebilmek için Windows da
+	-C:\Program Files\Java\jdkx.x.x_x\bin
+	konumuna gitmek gerekir. MacOs tarafında direkt dizinden çalıştırabiliyoruz.
+6-keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+bu kodu yapıştırdık ve gerekli yerleri değiştirmemiz gerekiyor.
+-my-upload-key kısmını değiştirebiliriz.Bu kısım appimizin paket adıdır.
+örnek paket adı => com.emintura.myfirstapp
+
+-daha sonra bir takma ad girmemiz gerekiyor.
+-my-key-alias kısmına yazacağız 
+örnek takma ad => com.emintura.myfirstapp
+
+7-Bu komutu çalıştırabiliriz artık.
+	-Bilgileri isteyecektir. Bilgileri girebiliriz.
+
+
+(KEYTOOLERROR HATASI ALIRSAK CMD Yİ YÖNETİCİ OLARAK BAŞLATARAK DENEMELİYİZ)
+
+
+8-Enter yaptıktan sonra keystore dosyamız main dizinine çıkmış oldu
+9-Keystore oluşturduktan sonra android->app altına yerleştiriyoruz.
+10-android -> gradle.properties dosyasına geliyoruz
+11-  MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+	MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+	MYAPP_UPLOAD_STORE_PASSWORD=*****
+	MYAPP_UPLOAD_KEY_PASSWORD=*****
+- Bu kodları en alta yapıştırıyoruz ve bilgileri dolduruyoruz.
+örnek doldurma==>   MYAPP_UPLOAD_STORE_FILE=com.emintura.myfirstapp.keystore
+				MYAPP_UPLOAD_KEY_ALIAS=com.emintura.myfirstapp
+				MYAPP_UPLOAD_STORE_PASSWORD=123123
+				MYAPP_UPLOAD_KEY_PASSWORD=123123
+
+12- android->app->build.gradle klasöründeki kod bloğunu güncellememiz gerekiyor.
+
+...
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+...
+
+----- siginigConfigs altına relase yi yerleştirmem gerekiyor.
+----- buildTypes altna yerleştiriyoruz.
+
+13-cd android
+./gradlew bundleRelease
+
+bu komutu çalıştırabiliriz. Bu komut bize AAB(Android App Bundle)formatında bi uzantı çıkaracak. Apk da çıkartacaktır fakat mağazaya yüklerken AAB formatında dikkat etmeliyiz. Çünkü ilgili telefonun özelliklerine göre app'e dinamik bir boyut kazandıracaktır.
+
+14-android/app/build/outputs/bundle/release/app-release.aab 
+
+bu dizinde aab formatında çıktımıza ulaşabiliriz.
+
+15- Direkt Apk ya ihtiyacımız varsa 13. satırı çalıştırmak yerine
+	-npx react-native run-android --variant=release
+komutunu çalıştırmalıyız.
+16- android -> app -> build -> outputs -> apk -> release dosyasında bulabiliriz 
+
+
+-----------------------------------------------------
+
+After the ./gradlew bundleRelease command we get a .aab version of our app. 
+To get APK, you should run the app with release version on any device with the below command.
+
+Make sure you have connected an android device
+For the production ready app, firstly you have to remove the previous app from the device
+Run this command in your-project/:
+
+react-native run-android --variant=release
+Then APK can be found in android/app/build/outputs/apk/release

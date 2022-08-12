@@ -1,0 +1,28 @@
+--------- Android İçin ----------
+
+1-Android İcon Generator
+	- Bizim app imiz için icon çıkarmamıza olanak sağayan site
+2-Android cihazlar için 2 tane shape çıkarmamız gerekiyor.
+ 	- circle and -square çünkü android cihazlarda ikisi içinde ayrı icon olması gerekiyor.
+3-Name verirken 
+	- square da ic_launcher 
+	- circle da ic_launcher_round olarak vermeliyiz.
+4-Icon dosyası indiğinde ic_launcher ve ic_launcher_round aynı yerde olacak
+5-app->src->main->res->mipman dosyasındaki tüm dosyaları bizim dosyalarımız ile değiştireceğiz.
+6-Uygulamanın adını değiştirmek istiyorsak gene aynıdizinde values klasöründe strings.xml deki yeri değiştirmemiz gerekiyor.
+
+---------- IOS İçin ----------
+
+1-Xcode u kullanmak gerekiyor.
+2-İsim değiştirmek için 
+	-en üst klasöre tıklıyoruz.
+	-target kısmından kendi appimizi seçiyoruz.
+	-bunu seçtikten sonra Display Name alanına app imizin ismini yazıyoruz.
+3-İcon Değiştirme işleminde ise uygulamamızın yer aldığı klasörü açıyoruz.
+	-Images.xcassets dosyasına tıklıyoruz
+	-Dosya içerisine AppIcon kısmına geliyoruz.
+	-Uygulamızın icon arayüzünü görüyor olmalıyız.
+	-Xcode da icon değiştirmek için uygun boyutlu iconları sürükle bırak ile değiştiriyoruz.
+4-İcon üretmek için app icon generator dan üretebiliriz.
+5-İndirdikten sonra klasörü sürükle bırak da yapabiliriz. Ellede ekleyebiliriz.
+6-ios->appKlasörü->Images.xcassets->AppIcon.appiconset

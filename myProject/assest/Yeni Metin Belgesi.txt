@@ -1,0 +1,12 @@
+isim girme tablosu bir kez olacak
+
+sıralama sayfaları farklı olacak.
+
+Easy tablosu 
+middle tablosu
+hard tablosu 
+
+ayrı ayrı firebase modülü olacak
+
+pointer büyüklüğüne göre sıralama yap
+

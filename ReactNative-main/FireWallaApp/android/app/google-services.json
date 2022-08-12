@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "265480710612",
+    "project_id": "firewallaapp",
+    "storage_bucket": "firewallaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265480710612:android:0791438b76f19d3e770e41",
+        "android_client_info": {
+          "package_name": "com.firewallaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265480710612-eamudj6a9v8415kasnrmkan7pj158hhk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT2Lc43mdzvAXG13qrdbN6WCrW_4ZUqIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265480710612-eamudj6a9v8415kasnrmkan7pj158hhk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

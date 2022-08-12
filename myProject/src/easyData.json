@@ -1,0 +1,31 @@
+[
+    {
+      "id": "0",
+      "question": "İlk peygamber kimdir? ",
+      "a":"Hz.Nuh  ",
+      "b":"Hz. Muhammed",
+      "c":"Hz Adem",
+      "d":"Hz İbrahim",
+      "correct":"c"
+
+    },
+    {
+        "id": "1",
+        "question": "Peygamber’imizin dedesi kimdir?",
+        "a":"Abdullah",
+        "b":"Ebu Talip",
+        "c":"Ebu Bekir",
+        "d":"Abdulmuttalip",
+        "correct":"d"
+    },
+    {
+        "id": "2",
+        "question": "Peygamber’imize peygamberlik kaç yaşında gelmiştir?",
+        "a":"25",
+        "b":"60",
+        "c":"35",
+        "d":"40",
+        "correct":"d"
+    }
+  
+  ]

@@ -1,0 +1,5 @@
+Realtime chat app gibi bir açılır menüde puanları yazdırabilirsin.
+ayrı bir sayfada tutabilirsin
+firebase kaydet
+
+progressbar da kaldın
